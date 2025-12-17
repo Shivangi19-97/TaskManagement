@@ -5,12 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- App Title -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvHeader"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Task Manager"
+        android:text="@string/task_manager"
         android:textSize="20sp"
         android:textStyle="bold"
         android:padding="16dp"
@@ -19,12 +18,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Search -->
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/etSearch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Search tasks"
+        android:hint="@string/search_tasks"
         android:padding="12dp"
         android:background="@android:drawable/edit_text"
         app:layout_constraintTop_toBottomOf="@id/tvHeader"
@@ -32,7 +30,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginHorizontal="12dp"/>
 
-    <!-- Task List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
@@ -43,15 +40,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Add Task Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="Add Task"
         android:src="@android:drawable/ic_input_add"
         app:tint="@android:color/white"
         android:layout_margin="16dp"
+        android:background="@color/teal_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

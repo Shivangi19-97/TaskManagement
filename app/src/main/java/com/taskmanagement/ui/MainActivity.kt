@@ -3,11 +3,8 @@ package com.taskmanagement.ui
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.EditText
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         setupListeners()
     }
 
+    /*
+      Initialize recyclerview
+     */
     private fun setupRecyclerView() {
         adapter = TaskAdapter(
             onEdit = { showTaskDialog(it) },
@@ -43,12 +43,18 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
     }
 
+    /*
+       Get Task List
+     */
     private fun observeTasks() {
         viewModel.tasks.observe(this) {
             adapter.submitList(it)
         }
     }
 
+    /*
+      Set Listeners on add and search button
+     */
     private fun setupListeners() {
 
         binding.btnAdd.setOnClickListener {
